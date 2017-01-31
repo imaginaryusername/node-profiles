@@ -2,7 +2,7 @@
  "cloudinit": null, 
  "days": 1, 
  "dcid": null, 
- "description": "OpenVPN server with FreeBSD. Returns a static key configuration.\n\nYou need to have [OpenVPN](https://openvpn.net/index.php/open-source/downloads.html) installed to your client. Please note that currently this configuration will only work with one device at a time.\n\nOn Android, install [OpenVPN Connect](https://play.google.com/store/apps/details?id=net.openvpn.openvpn).\n\nOn IOS, install [OpenVPN Connect](https://itunes.apple.com/us/app/openvpn-connect/id590379981).\n\nOnce you see the configuration file on your screen, click \"Save as file\".\n\nIf using CLI:\n\nSave output and run with openvpn-client.\n\nExample: `sporestack spawn --launch vpn > vpn.ovpn; sudo openvpn-client vpn.ovpn`\n", 
+ "description": "OpenVPN server with FreeBSD. Returns a static key configuration.\n\nYou need to have [OpenVPN](https://openvpn.net/index.php/open-source/downloads.html) installed on your machine. Please note that currently this configuration will only work with one device at a time.\n\nOn Android, install [OpenVPN Client Free](https://play.google.com/store/apps/details?id=it.colucciweb.free.openvpn) (OpenVPN Connect and most other mobile phone clients will not work).\n\nIOS is not supported.\n\nOnce you see the configuration file on your screen, click \"Save as file\".\n\nIf using CLI:\n\nSave output and run with openvpn-client.\n\nExample: `sporestack spawn --launch vpn > vpn.ovpn; sudo openvpn-client vpn.ovpn`\n", 
  "flavor": 29, 
  "human_name": "VPN", 
  "mimetype": "application/x-openvpn-profile", 
