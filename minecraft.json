@@ -1,0 +1,13 @@
+{
+ "cloudinit": null, 
+ "days": 1, 
+ "dcid": null, 
+ "description": "Launches a vanilla Minecraft 1.11.2 on FreeBSD.\n", 
+ "flavor": 94, 
+ "human_name": "Minecraft Server", 
+ "mimetype": "text/plain", 
+ "name": "minecraft", 
+ "osid": 230, 
+ "postlaunch": null, 
+ "startupscript": "#!/bin/sh\n\nVERSION=1.11.2\n\nexport ASSUME_ALWAYS_YES=yes\n\nexport PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin\n\npkg upgrade\n\npkg install openjdk8-jre ca_root_nss pwgen\n\n# Reset root password\npwgen -s 20 1 | pw user mod root -h 0 -s /bin/sh\n\ncd /root\n\n# Not sure of a better way to fetch the latest version.\nfetch https://s3.amazonaws.com/Minecraft.Download/versions/$VERSION/minecraft_server.$VERSION.jar\n\nmv minecraft_server.$VERSION.jar minecraft_server.jar\n\necho 'eula=true' > eula.txt\n\necho '#!/bin/sh\ncd /root\n# We should add auto-restart at some point...\n/usr/local/bin/java -Xmx1024M -Xms1024M \\\n                    -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalPacing \\\n                    -XX:ParallelGCThreads=4 -XX:+AggressiveOpts \\\n                    -jar /root/minecraft_server.jar nogui >> /var/log/minecraft 2>&1 &\n' > /etc/rc.local\n\nchmod 555 /etc/rc.local\n\n/etc/rc.local\n"
+}
