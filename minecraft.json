@@ -3,7 +3,7 @@
  "days": 1, 
  "dcid": null, 
  "description": "Launches a vanilla Minecraft 1.11.2 on FreeBSD.\n", 
- "flavor": 94, 
+ "flavor": 203,
  "human_name": "Minecraft Server", 
  "mimetype": "text/plain", 
  "name": "minecraft", 

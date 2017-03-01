@@ -3,7 +3,7 @@
  "days": 28, 
  "dcid": null, 
  "description": "Launches a FreeBSD tor relay with IPv4 and IPv6.", 
- "flavor": 29, 
+ "flavor": null,
  "human_name": "Tor Relay", 
  "name": "tor_relay", 
  "mimetype": "text/plain",
